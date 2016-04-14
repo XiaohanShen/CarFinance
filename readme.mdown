@@ -1,0 +1,15 @@
+# 上汽金融面试题
+
+## 运行方法
+1. 运行命令行工具，cd到当前目录,输入`bower install`安装相关组件
+2. 双击index.html运行
+
+## 说明
+1.“4.收款银行” “5.收款账户”采用模糊匹配，需要至少输入2个字符才能开启模糊匹配功能。()
+2. 考虑到付款账户只有5条纪录，直接采用下拉菜单设计。如需采用模糊匹配＋下来菜单设计，可参考 [jQuery UI autoComplete combobox](http://jqueryui.com/autocomplete/#combobox).
+3. 由于本地的模糊匹配候选数据有10万，15万条, 模糊匹配会有延迟问题，如数据放在服务器端，可通过Top，Limit等SQL限定搜索条目优化搜索。
+
+## 资源
+[jQuery UI](http://jqueryui.com).
+[jQuery](http://jquery.com/).
+[knockOutJS](knockoutjs.com).

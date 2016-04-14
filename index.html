@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>上汽金融面试</title>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
+	 <style>
+	  .ui-autocomplete {
+	    max-height: 100px;
+	    overflow-y: auto;
+	    /* prevent horizontal scrollbar */
+	    overflow-x: hidden;
+	  }
+	  /* IE 6 doesn't support max-height
+	   * we use height instead, but this forces the menu to always be this tall
+	   */
+	  * html .ui-autocomplete {
+	    height: 200px;
+	  }
+	 </style>
+	
+
+</head>
+<body>
+	<h1>上汽金融面试</h1>
+	<form action=""  data-bind="submit: addData">
+   		 	<p>1.付款帐户 <select name="paymentAccount" data-bind="options: payAccounts, optionsText: 'name'"></select></p>
+   		 	<fieldset class="pay_fieldset">
+   		 		<legend>2. 付款金额</legend>
+   		 		<p>付款总额 <input type ="number" data-bind="value: sumCost">元</p>
+   		 		<p>期望现金比例 <input type="number" data-bind="value:expCashProp"> 匹配现金 
+   		 			<input type="number" data-bind="value: actualCash"> 实际现金比例<input type="number" data-bind="value:actualCashProp" disabled="true"></p>
+   		 		<p>期望票据比例 <input type="number" data-bind="value:expNoteProp"> 匹配票据
+   		 			<input type="number" data-bind="value:actualNote"> 实际票据比例<input type="number" data-bind ="value: actualNoteProp" disabled="true"></p>
+   		 	</fieldset>
+			
+			<p>3.期望付款日<input id="datePicker" type="text"></p>
+			<p>4.收款账户<input id="payeeAccount" type="text" data-bind="value: payeeAccount, valueUpdate: ['blur']"></p>
+			<p>5.收款户名<input id="payeeAccountName" type="text" data-bind="value: payeeAccountName, valueUpdate: ['blur']"></p>
+			<p>6.收款银行<input id="payeeBank" type="text" data-bind="value: bankNameComputed, valueUpdate: ['blur']"></p>
+			<p>  收款行地区 省 <select name="payeeProvince" data-bind="options: area, value: chosenProvince, optionsText: 'province', optionsCaption: '请选择...'"></select> 市 <select data-bind="options: cities,value: chosenCity, optionsCaption: '请选择...'"></select> </p>
+			<button type="submit">提交</button>
+	</form>
+
+	 <script type="text/javascript" src="bower_components/knockout/dist/knockout.js"></script>
+	 <script src="bower_components/jquery/dist/jquery.min.js"></script>
+	 <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+	 <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
